@@ -1,30 +1,18 @@
 package com.appiumdemo;
 
-import com.appiumdemo.common.CommonActions;
+import com.appiumdemo.common.BaseActions;
 import com.appiumdemo.pages.AgreementPage;
 import com.appiumdemo.pages.PlayingSongPage;
 import com.appiumdemo.pages.SongsListPage;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 
-public class CalculatorTest {
-
-    // WebDriver driver;
-    // AndroidDriver driver;
-    private AppiumDriver<MobileElement> driver;
-    private final CommonActions commonActions = new CommonActions();
-
-    @BeforeTest
-    public void init() throws MalformedURLException{
-        driver = commonActions.openMusicPlayer();
-    }
+public class CalculatorTest extends BaseActions{
 
     @Test
     public void playPauseMusic() throws InterruptedException {
@@ -33,13 +21,5 @@ public class CalculatorTest {
         PlayingSongPage playingSongPage = songsListPage.playFirstSong();
         Thread.sleep(5000);
         playingSongPage.clickPlayBtn();
-    }
-
-    @AfterTest
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-            driver = null;
-        }
     }
 }
