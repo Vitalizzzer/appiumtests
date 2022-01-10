@@ -22,7 +22,7 @@ public class SongsListPage {
     }
 
     @FindBy(id = "com.miui.player:id/local_song_list")
-    private MobileElement songList;
+    protected MobileElement songList;
 
     public PlayingSongPage playFirstSong(){
         wait.until(ExpectedConditions.visibilityOf(songList));

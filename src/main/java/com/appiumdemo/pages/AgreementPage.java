@@ -20,12 +20,12 @@ public class AgreementPage {
     }
 
     @FindBy(id = "com.miui.player:id/chb_all")
-    private MobileElement btnAgreementRadio;
+    protected MobileElement btnAgreementRadio;
 
     @FindBy(id = "com.miui.player:id/tv_action")
-    private MobileElement btnAgree;
+    protected MobileElement btnAgree;
 
-    public SongsListPage confirmAgreement() throws InterruptedException {
+    public SongsListPage confirmAgreement() {
         wait.until(ExpectedConditions.visibilityOf(btnAgreementRadio));
         btnAgreementRadio.click();
         btnAgree.click();

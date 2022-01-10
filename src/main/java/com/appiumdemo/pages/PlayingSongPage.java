@@ -13,7 +13,7 @@ public class PlayingSongPage {
     }
 
     @FindBy(id = "com.miui.player:id/btn_play")
-    private MobileElement btnPlay;
+    protected MobileElement btnPlay;
 
     public void clickPlayBtn(){
         btnPlay.click();
